@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>京都 · 大阪 行前說明 · 2026.10.20–10.25</title>
+<style>
+:root{
+  --bg:#FAF7F1;--surface:#FFFFFF;--tint:#F7F2EA;--border:#E8E1D5;
+  --text:#1E1B16;--text-2:#433E36;--muted:#7C766C;
+  --accent:#B85318;--accent-soft:rgba(184,83,24,.09);
+  --matcha:#4F6B2E;--matcha-soft:rgba(79,107,46,.09);
+  --info:#16688F;--info-soft:rgba(22,104,143,.08);
+  --warn:#9A6205;--warn-soft:rgba(198,138,25,.11);
+  --urgent:#B3261E;--urgent-soft:rgba(179,38,30,.08);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang TC","Hiragino Sans","Noto Sans TC",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+.slide,.slide *{user-select:text;-webkit-user-select:text;cursor:auto}
+.nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;z-index:99;font-family:var(--font)}
+.nav button{border:0;background:rgba(255,255,255,.9);border-radius:99px;width:40px;height:40px;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.nav span{color:#fff;font-size:14px;min-width:54px;text-align:center}
+html,body{height:100%;background:#1E1B16;font-family:var(--font);color:var(--text);overflow:hidden}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center;background:var(--bg)}
+.slide{position:absolute;inset:0;padding:96px 120px 90px;display:none;flex-direction:column}
+.slide.on{display:flex}
+.eyebrow{font-size:26px;letter-spacing:.14em;color:var(--accent);font-weight:600;text-transform:uppercase}
+h1{font-size:120px;font-weight:700;letter-spacing:-.02em;line-height:1.05}
+h2{font-size:68px;font-weight:700;letter-spacing:-.01em;line-height:1.15;margin-top:14px}
+.sub{font-size:34px;color:var(--muted);margin-top:16px;line-height:1.45}
+.body{flex:1;display:flex;gap:56px;margin-top:48px;min-height:0}
+.col{flex:1;display:flex;flex-direction:column;gap:22px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:30px 36px;box-shadow:0 1px 2px rgba(70,55,35,.05),0 8px 24px rgba(70,55,35,.045)}
+.card h3{font-size:34px;margin-bottom:12px}
+.card p,.card li{font-size:30px;line-height:1.5;color:var(--text-2)}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.card.warn{background:var(--warn-soft);border-color:rgba(198,138,25,.35)}
+.card.urgent{background:var(--urgent-soft);border-color:rgba(179,38,30,.26)}
+.card.ok{background:var(--matcha-soft);border-color:rgba(79,107,46,.25)}
+.card.info{background:var(--info-soft);border-color:rgba(22,104,143,.3)}
+b{color:var(--text)}
+.hot{color:var(--accent);font-weight:600}
+.tl{display:flex;flex-direction:column;gap:0}
+.tl div{display:flex;gap:28px;padding:15px 0;border-bottom:1px solid var(--border);font-size:30px;line-height:1.4;color:var(--text-2)}
+.tl div:last-child{border-bottom:0}
+.tl time{flex:0 0 112px;font-variant-numeric:tabular-nums;font-weight:600;color:var(--accent)}
+.tl .dim{color:var(--muted)}
+.big{font-size:150px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.stat{display:flex;gap:28px}
+.stat .card{flex:1;text-align:center}
+.stat .n{font-size:84px;font-weight:700;color:var(--accent);line-height:1.1}
+.stat .l{font-size:26px;color:var(--muted);margin-top:6px}
+table{width:100%;border-collapse:collapse;font-size:28px}
+th,td{text-align:left;padding:15px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+th{font-size:22px;letter-spacing:.08em;color:var(--muted);font-weight:600}
+td:first-child{font-weight:600;white-space:nowrap}
+.pill{display:inline-block;font-size:22px;padding:3px 14px;border-radius:99px;background:var(--accent-soft);color:var(--accent);font-weight:600;margin-left:8px;vertical-align:middle}
+.pill.g{background:var(--matcha-soft);color:var(--matcha)}
+.pill.r{background:var(--urgent-soft);color:var(--urgent)}
+.foot{position:absolute;left:120px;right:120px;bottom:34px;display:flex;justify-content:space-between;font-size:20px;color:var(--muted)}
+
+.title-slide{flex-direction:row!important;align-items:center;gap:20px;overflow:hidden;background:linear-gradient(135deg,#FFF6EE 0%,#FDE7E7 55%,#F9D9D0 100%)}
+.ts-left{flex:1.05;position:relative;z-index:2}
+.tag-chip{display:inline-block;font-size:28px;font-weight:600;color:var(--accent);background:#fff;border:2px dashed var(--accent);border-radius:99px;padding:8px 26px}
+.title-slide h1{font-size:176px;margin-top:30px;line-height:1.02}
+.heart{color:#E8627A;font-size:.7em;display:inline-block;animation:beat 1.6s ease-in-out infinite}
+.ts-date{font-size:50px;font-weight:600;color:var(--text-2);margin-top:22px}
+.ts-chips{display:flex;gap:16px;margin-top:30px}
+.ts-chips span{font-size:30px;font-weight:600;background:#fff;border-radius:99px;padding:10px 28px;box-shadow:0 4px 0 rgba(184,83,24,.18);color:var(--accent)}
+.ts-chips span:nth-child(2){color:var(--matcha);box-shadow:0 4px 0 rgba(79,107,46,.2)}
+.ts-chips span:nth-child(3){color:#C4455E;box-shadow:0 4px 0 rgba(196,69,94,.2)}
+.ts-sub{margin-top:52px!important;font-size:30px!important}
+.ts-right{flex:.95;position:relative;height:100%;display:flex;align-items:center;justify-content:center;z-index:2}
+.blob{position:absolute;width:760px;height:760px;border-radius:58% 42% 55% 45%/50% 55% 45% 50%;background:#FFD9DF;left:50%;top:52%;transform:translate(-50%,-50%);box-shadow:inset 0 0 0 10px rgba(255,255,255,.6)}
+.trio{position:relative;width:720px;transform:rotate(-3deg);filter:drop-shadow(0 18px 24px rgba(120,60,50,.28));animation:bob 4s ease-in-out infinite}
+.tape{position:absolute;width:150px;height:44px;background:rgba(255,230,140,.8);border:2px dashed rgba(184,83,24,.35);z-index:3}
+.t1{left:14%;top:21%;transform:rotate(-28deg)}
+.t2{right:10%;top:44%;transform:rotate(24deg);background:rgba(190,225,200,.85)}
+.deco{position:absolute;font-size:72px;z-index:4;animation:float 3.6s ease-in-out infinite}
+.d1{left:-2%;top:19%;font-size:96px}.d2{right:8%;top:12%;animation-delay:.6s}.d3{left:0;bottom:12%;animation-delay:1.2s}
+.d4{right:3%;top:34%;font-size:56px;animation-delay:.3s}.d5{right:6%;bottom:12%;animation-delay:.9s}.d6{left:46%;top:3%;font-size:56px;animation-delay:1.5s}
+.bubble{position:absolute;z-index:5;background:#fff;border-radius:99px;padding:12px 30px;font-size:32px;font-weight:700;color:#C4455E;box-shadow:0 6px 0 rgba(196,69,94,.22)}
+.b1{left:4%;top:5%;transform:rotate(-6deg)}
+.b2{right:2%;bottom:30%;transform:rotate(5deg);color:var(--accent);box-shadow:0 6px 0 rgba(184,83,24,.22)}
+.petals i{position:absolute;top:-60px;font-size:40px;font-style:normal;opacity:.75;animation:fall 14s linear infinite;z-index:1}
+@keyframes fall{to{transform:translateY(1180px) rotate(360deg)}}
+@keyframes float{50%{transform:translateY(-14px) rotate(6deg)}}
+@keyframes bob{50%{transform:rotate(-1.5deg) translateY(-8px)}}
+@keyframes beat{50%{transform:scale(1.15)}}
+@media print{.petals{display:none}.trio,.deco,.heart{animation:none}}
+.cb{display:flex;gap:16px;align-items:flex-start}
+.cb::before{content:"☐";font-size:34px;line-height:1.3;color:var(--muted)}
+.cb.done::before{content:"✅"}
+#hint{position:fixed;right:18px;bottom:12px;font-size:13px;color:#999;font-family:var(--font)}
+@media print{
+  .nav{display:none}
+  html,body{overflow:visible;background:#fff;height:auto}
+  #stage{position:static;transform:none!important;width:1920px;height:auto}
+  .slide{position:relative;display:flex!important;height:1080px;page-break-after:always}
+  #hint{display:none}
+  @page{size:1920px 1080px;margin:0}
+}
+</style>
+</head>
+<body>
+<div id="stage">
+
+<!-- 1 Title -->
+<section class="slide title-slide on">
+  <div class="petals" aria-hidden="true"><i style="left:6%;animation-delay:0s">🌸</i><i style="left:22%;animation-delay:2s;font-size:30px">🍁</i><i style="left:41%;animation-delay:4s">🌸</i><i style="left:58%;animation-delay:1s;font-size:30px">🍁</i><i style="left:74%;animation-delay:3s">🌸</i><i style="left:90%;animation-delay:5s;font-size:30px">🍁</i></div>
+  <div class="ts-left">
+    <div class="tag-chip">✈️ 行前說明 · Pre-trip Briefing</div>
+    <h1>京都 <span class="heart">♡</span> 大阪</h1>
+    <div class="ts-date">2026.10.20（二）— 10.25（日）</div>
+    <div class="ts-chips"><span>6 天 5 夜</span><span>三人同行</span><span>🍁 秋天出發</span></div>
+    <div class="sub ts-sub">🏨 The Thousand Kyoto ×3 晚 → 安嵐 ANRAN ×2 晚<br>✈️ 去程 10/20 17:15 抵達 KIX · 回程 10/25 12:20 星宇航空</div>
+  </div>
+  <div class="ts-right">
+    <div class="blob"></div>
+    <div class="tape t1"></div><div class="tape t2"></div>
+    <img class="trio" src="trio.png" alt="三位同行的人">
+    <span class="deco d1">⛩️</span><span class="deco d2">🌸</span><span class="deco d3">🍡</span>
+    <span class="deco d4">⭐</span><span class="deco d5">🍵</span><span class="deco d6">✨</span>
+    <div class="bubble b1">いってきます！</div>
+    <div class="bubble b2">出發囉 ♡</div>
+  </div>
+</section>
+
+<!-- 2 Overview -->
+<section class="slide">
+  <div class="eyebrow">Overview</div>
+  <h2>一張圖看完六天</h2>
+  <div class="body" style="flex-direction:column;gap:30px">
+    <div class="stat">
+      <div class="card"><div class="n">6 天 5 夜</div><div class="l">10/20 – 10/25</div></div>
+      <div class="card"><div class="n">1 次</div><div class="l">換飯店（10/23）</div></div>
+      <div class="card"><div class="n">3 + 2</div><div class="l">京都 3 晚 · 大阪 2 晚</div></div>
+    </div>
+    <div class="card" style="padding:12px 28px">
+      <table>
+        <tr><th>日期</th><th>主題</th><th>住</th></tr>
+        <tr><td>10/20 二</td><td>KIX 17:15 落地 → 京都 · 只有晚餐</td><td>The Thousand</td></tr>
+        <tr><td>10/21 三</td><td>嵐山清晨 · 下午錦市場逛街</td><td>The Thousand</td></tr>
+        <tr><td>10/22 四</td><td>東山一條線：銀閣寺 → <span class="hot">無鄰菴 15:00</span> → 祇園黃昏</td><td>The Thousand</td></tr>
+        <tr><td>10/23 五</td><td>伏見稻荷 · 宇治抹茶 → 下午移動大阪</td><td>安嵐</td></tr>
+        <tr><td>10/24 六</td><td>大阪深度逛：黑門 → 中崎町 → 梅田 → 心齋橋</td><td>安嵐</td></tr>
+        <tr><td>10/25 日</td><td>08:35 出發 → KIX 12:20 飛</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>京都 · 大阪 行前說明</span><span>2 / 15</span></div>
+</section>
+
+<!-- 3 Know first -->
+<section class="slide">
+  <div class="eyebrow">Know first</div>
+  <h2>出發前先知道的三件事</h2>
+  <div class="body">
+    <div class="col">
+      <div class="card warn"><h3>🌙 10/20 落地就天黑</h3><p>17:15 落地，日落 17:10。Day 1 只剩「抵達 + 入住 + 晚餐」，祇園黃昏拍照已搬到 10/22 傍晚。</p></div>
+      <div class="card warn"><h3>⏰ 10/25 要很早出門</h3><p>12:20 起飛 → <b>08:35 離開飯店</b> → 08:50 南海新今宮 → 09:30 KIX。沒有大阪的早上，購物與黑門市場都要在 10/24 做完。</p></div>
+    </div>
+    <div class="col">
+      <div class="card info"><h3>🍁 10 月下旬還沒紅葉</h3><p>京都市區見頃是 <b>11 月下旬</b>，這次嵐山、東山、永觀堂都是綠的。</p><p style="margin-top:10px">好消息：人潮比 11 月少很多，白天 21–23°C、早晚 12–14°C，是全年最舒服的季節。</p></div>
+      <div class="card ok"><h3>✅ 已確定</h3><ul><li>機票：去程、回程（星宇）</li><li>住宿：京都、大阪兩間</li><li>無鄰菴：10/22 15:00 時段</li></ul></div>
+    </div>
+  </div>
+  <div class="foot"><span>京都 · 大阪 行前說明</span><span>3 / 15</span></div>
+</section>
+
+<!-- 4 Day 1 -->
+<section class="slide">
+  <div class="eyebrow">Day 1 · 10/20 二</div>
+  <h2>KIX 落地 → 京都 <span class="pill">只排晚餐</span></h2>
+  <div class="body">
+    <div class="card" style="flex:1.3"><div class="tl">
+      <div><time>17:15</time><span>抵達 KIX</span></div>
+      <div><time>18:15</time><span>入境、領行李完成（先填好 Visit Japan Web）</span></div>
+      <div><time>18:30</time><span><b>JR HARUKA → 京都站</b>（80 分，全車指定席）</span></div>
+      <div><time>19:50</time><span>京都站走 2–4 分到 The Thousand check-in</span></div>
+      <div><time>20:30</time><span>🍜 晚餐：伊勢丹 11F 拉麵小路 / 地下街 Porta</span></div>
+      <div><time>21:30</time><span>早點休息，明天 07:40 的車</span></div>
+    </div></div>
+    <div class="col" style="flex:.8">
+      <div class="card urgent"><h3>⚠️ 先處理</h3><ul><li>JR HARUKA 要事前劃位</li><li>京都店家 21:00–21:30 就 last order，別拖</li></ul></div>
+      <div class="card"><h3>備案</h3><p>錯過 Haruka：機場利木津巴士到京都站，約 90 分，營運到 23:00 左右。</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>京都 · 大阪 行前說明</span><span>4 / 15</span></div>
+</section>
+
+<!-- 4b KIX to hotel -->
+<section class="slide">
+  <div class="eyebrow">Day 1 · 10/20 二</div>
+  <h2>怎麼從關西機場到京都飯店</h2>
+  <div class="body">
+    <div class="card" style="flex:1.3"><div class="tl">
+      <div><time>17:15</time><span>落地 KIX，入境、領行李（抓 1 小時；先填 Visit Japan Web 可走快速通道）</span></div>
+      <div><time>18:15</time><span>到機場的 <b>JR 關西空港站</b>，換 HARUKA 指定席票（或用事前網路訂的票）</span></div>
+      <div><time>18:30</time><span><b>JR HARUKA 特急 → 京都站</b>，約 80 分，班距約 30 分</span></div>
+      <div><time>19:50</time><span>抵達京都站，走 <b>2–4 分</b>到 The Thousand Kyoto check-in</span></div>
+      <div><time>20:30</time><span>晚餐：伊勢丹 11F 拉麵小路（約 22:00 結束）/ 地下街 Porta</span></div>
+    </div></div>
+    <div class="col" style="flex:.8">
+      <div class="card urgent"><h3>要先做</h3><ul><li><b>HARUKA 事先劃位</b>，三人要坐一起，現場常只剩分開的位子</li><li>票價約 ¥3,640（概估，以 JR 西日本官網為準）</li></ul></div>
+      <div class="card ok"><h3>時間很充裕</h3><p>HARUKA 末班約 20:15（以當日時刻表為準），不用在機場衝。</p></div>
+      <div class="card warn"><h3>備案</h3><p>真的錯過：搭機場利木津巴士到京都站，約 90 分，營運到 23:00 左右。</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>京都 · 大阪 行前說明</span><span>5 / 15</span></div>
+</section>
+
+<!-- 5 Day 2 -->
+<section class="slide">
+  <div class="eyebrow">Day 2 · 10/21 三</div>
+  <h2>嵐山清晨 · 錦市場 <span class="pill r">竹林 8:30 前到</span></h2>
+  <div class="body">
+    <div class="card" style="flex:1.3"><div class="tl">
+      <div><time>07:40</time><span>京都站 → JR 嵯峨嵐山（16 分，¥240）</span></div>
+      <div><time>08:10</time><span>🎋 竹林小徑 · 9 點後是人牆</span></div>
+      <div><time>09:10</time><span>🪷 野宮神社 · 天龍寺曹源池庭園（8:30 開）</span></div>
+      <div><time>10:40</time><span>🌉 渡月橋 · % Arabica 嵐山店</span></div>
+      <div><time>12:15</time><span>🍲 午餐：嵐山庭院（要訂位）</span></div>
+      <div><time>15:30</time><span>🛍️ 錦市場（<b>17:00 收攤</b>）</span></div>
+      <div><time>16:30</time><span>寺町 · 新京極 · 三条通，WEEKENDERS COFFEE</span></div>
+      <div><time>18:30</time><span>🍱 晚餐：Moritaya 木屋町 / 庵都 / 大力邸</span></div>
+    </div></div>
+    <div class="col" style="flex:.8">
+      <div class="card warn"><h3>注意</h3><ul><li>10/21 週三，京都個人小店常公休，先查定休日</li><li>錦市場整趟只有這個時段</li></ul></div>
+      <div class="card"><h3>選配</h3><p>祇王寺（人比竹林少一半）或嵯峨野小火車（需事先訂票）。</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>京都 · 大阪 行前說明</span><span>6 / 15</span></div>
+</section>
+
+<!-- 6 Day 3 -->
+<section class="slide">
+  <div class="eyebrow">Day 3 · 10/22 四</div>
+  <h2>東山一條線 <span class="pill g">無鄰菴 已訂 15:00</span></h2>
+  <div class="body">
+    <div class="card" style="flex:1.3"><div class="tl">
+      <div><time>09:00</time><span>🏯 銀閣寺（8:30 開，京都站 8:30 前公車出發）</span></div>
+      <div><time>09:50</time><span>🚶 哲學之道，散步約 40 分</span></div>
+      <div><time>11:00</time><span>🍁 永觀堂 <span class="dim">（選配）</span></span></div>
+      <div><time>12:00</time><span>🍲 午餐：奧丹 南禪寺 / 京うな和（要訂位）</span></div>
+      <div><time>13:30</time><span>🧱 南禪寺 · 水路閣</span></div>
+      <div><time>15:00</time><span><b class="hot">🍵 無鄰菴 · 庭院抹茶</b>（準時到）</span></div>
+      <div><time>16:20</time><span>📷 八坂塔 · 二年坂 · 三年坂（黃金時刻）</span></div>
+      <div><time>17:15</time><span>🏮 石塀小路 → 祇園白川 · 巽橋</span></div>
+      <div><time>19:00</time><span>🍢 晚餐：oden klep</span></div>
+    </div></div>
+    <div class="col" style="flex:.8">
+      <div class="card urgent"><h3>硬規則</h3><p><b>14:15 還沒走到南禪寺一帶，就直接跳去無鄰菴</b>，其他全部放掉。落後時先砍：永觀堂 → 水路閣 → 銀閣寺縮短。</p></div>
+      <div class="card warn"><h3>唯一機會</h3><p>10/22 是無鄰菴唯一能去的一天。日落 17:10，八坂塔斜光只剩不到 1 小時。</p></div>
+      <div class="card"><h3>提醒</h3><p>花見小路私人小巷禁止拍照（有罰款）。</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>京都 · 大阪 行前說明</span><span>7 / 15</span></div>
+</section>
+
+<!-- 7 Day 4 -->
+<section class="slide">
+  <div class="eyebrow">Day 4 · 10/23 五</div>
+  <h2>伏見稻荷 · 宇治 → 大阪</h2>
+  <div class="body">
+    <div class="card" style="flex:1.3"><div class="tl">
+      <div><time>07:45</time><span>退房，行李寄放飯店（全程不帶箱子）</span></div>
+      <div><time>08:20</time><span>京都站 → JR 稲荷（5 分，¥150）</span></div>
+      <div><time>08:30</time><span>⛩️ 千本鳥居 · 8 點前後幾乎沒人</span></div>
+      <div><time>10:30</time><span>JR 奈良線 → 宇治（稲荷站只停普通車）</span></div>
+      <div><time>11:00</time><span>🍵 中村藤吉本店 / 伊藤久右衛門（會排隊，先去）</span></div>
+      <div><time>12:30</time><span>🪙 平等院 鳳凰堂（¥700，內部另收 ¥300）</span></div>
+      <div><time>14:40</time><span>宇治 → 京都站取行李</span></div>
+      <div><time>15:30</time><span>JR 新快速 → 大阪 → 環狀線 → 新今宮（約 50 分）</span></div>
+      <div><time>16:30</time><span>🏨 安嵐 check-in；17:30 新世界 · 通天閣</span></div>
+      <div><time>19:00</time><span>🍢 晚餐：串カツ だるま（醬汁不能沾第二次）</span></div>
+    </div></div>
+    <div class="col" style="flex:.8">
+      <div class="card ok"><h3>順路</h3><p>三個點都在 JR 奈良線同一方向，玩完回京都站取行李再去大阪，不繞路。</p></div>
+      <div class="card warn"><h3>注意</h3><ul><li>安嵐是自助入住：密碼和地址先截圖</li><li>今天剛移動完，不跑梅田、中崎町</li></ul></div>
+    </div>
+  </div>
+  <div class="foot"><span>京都 · 大阪 行前說明</span><span>8 / 15</span></div>
+</section>
+
+<!-- 8 Day 5 -->
+<section class="slide">
+  <div class="eyebrow">Day 5 · 10/24 六</div>
+  <h2>大阪深度逛 <span class="pill r">最後的購物日</span></h2>
+  <div class="body">
+    <div class="card" style="flex:1.3"><div class="tl">
+      <div><time>09:30</time><span>🐙 黑門市場（只有早上，下午收攤）</span></div>
+      <div><time>11:15</time><span>☕️ 中崎町：昭和長屋咖啡、古著、小雜貨</span></div>
+      <div><time>12:40</time><span>🛍️ 梅田：阪急百貨 B1（伴手禮）· Grand Front · 蔦屋</span></div>
+      <div><time>13:45</time><span>🥘 午餐：お好み焼き きじ</span></div>
+      <div><time>15:15</time><span>南船場 Orange Street → 16:15 美國村</span></div>
+      <div><time>17:15</time><span>💊 心齋橋筋最後購物（退稅：同店同日滿 ¥5,000）</span></div>
+      <div><time>18:45</time><span>🍢 晚餐：香川關東煮</span></div>
+      <div><time>20:30</time><span>🌃 道頓堀 · 固力果看板，回程叫計程車</span></div>
+    </div></div>
+    <div class="col" style="flex:.8">
+      <div class="card urgent"><h3>不能砍</h3><p>梅田阪急 B1 伴手禮、心齋橋退稅採買。10/25 早上沒有補買的機會。</p></div>
+      <div class="card warn"><h3>走不完就砍</h3><p>美國村 → Orange Street → 中崎町縮短。</p></div>
+      <div class="card"><h3>今天要做</h3><ul><li>買好 10/25 的 Rapi:t 車票</li><li>列好購物清單（週六很擠）</li><li>當晚打包完行李</li></ul></div>
+    </div>
+  </div>
+  <div class="foot"><span>京都 · 大阪 行前說明</span><span>9 / 15</span></div>
+</section>
+
+<!-- 9 Day 6 -->
+<section class="slide">
+  <div class="eyebrow">Day 6 · 10/25 日</div>
+  <h2>大阪 → KIX <span class="pill">12:20 星宇</span></h2>
+  <div class="body">
+    <div class="card" style="flex:1.2"><div class="tl">
+      <div><time>07:30</time><span>☕️ 飯店早餐（不要出去找咖啡廳）</span></div>
+      <div><time>08:30</time><span>退房</span></div>
+      <div><time class="hot">08:35</time><span><b>離開飯店</b>，走 8–10 分到新今宮</span></div>
+      <div><time>08:50</time><span>南海 新今宮 → KIX（Rapi:t 約 35 分 / 空港急行約 40 分）</span></div>
+      <div><time>09:30</time><span>✈️ KIX 報到 · 退稅 · 出關</span></div>
+      <div><time>12:20</time><span>起飛 · また来ます 🍁</span></div>
+    </div></div>
+    <div class="col" style="flex:.8">
+      <div class="card"><div class="big" style="color:var(--accent)">08:35</div><p style="margin-top:12px">離開飯店。週日 KIX 一週最擠，留 2 小時 50 分不會太閒。</p></div>
+      <div class="card warn"><h3>前一晚做完</h3><ul><li>行李打包好</li><li>退稅收據整理好</li><li>Rapi:t 車票買好（08:50 那班）</li></ul></div>
+    </div>
+  </div>
+  <div class="foot"><span>京都 · 大阪 行前說明</span><span>10 / 15</span></div>
+</section>
+
+<!-- 10 Transport -->
+<section class="slide">
+  <div class="eyebrow">Getting around</div>
+  <h2>交通與票券</h2>
+  <div class="body" style="gap:40px">
+    <div class="card" style="flex:1.5;padding:12px 28px">
+      <table style="font-size:25px">
+        <tr><th>日期</th><th>路段</th><th>時間</th><th>票價</th></tr>
+        <tr><td>10/20</td><td>KIX → 京都 JR HARUKA <span class="pill r">要劃位</span></td><td>80 分</td><td>約 ¥3,640</td></tr>
+        <tr><td>10/21</td><td>京都站 → 嵯峨嵐山</td><td>16 分</td><td>¥240</td></tr>
+        <tr><td>10/22</td><td>京都站 ↔ 東山（公車 / 計程車）</td><td>20–40 分</td><td>計程車約 ¥1,500</td></tr>
+        <tr><td>10/23</td><td>京都 → 稲荷 → 宇治</td><td>5 / 15 分</td><td>¥150 / ¥240</td></tr>
+        <tr><td>10/23</td><td>京都 → 新今宮</td><td>約 50 分</td><td>約 ¥760</td></tr>
+        <tr><td>10/25</td><td>新今宮 → KIX 南海 <span class="pill r">要買票</span></td><td>35 / 40 分</td><td>¥1,490 / ¥970</td></tr>
+      </table>
+    </div>
+    <div class="col" style="flex:1">
+      <div class="card ok"><h3>💳 IC 卡就夠</h3><p>iPhone 錢包加 Suica，Apple Pay 儲值。JR、私鐵、地鐵、公車、便利商店都能刷。六天交通費約 ¥7,000／人，任何周遊券都回不了本。</p></div>
+      <div class="card info"><h3>🚌 10/22 東山</h3><p>京都站到銀閣寺搭公車 5／17 系統約 35–40 分，8:30 前出發。三人同行，計程車常更划算。</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>票價為概估，以官網為準</span><span>11 / 15</span></div>
+</section>
+
+<!-- 11 Hotels -->
+<section class="slide">
+  <div class="eyebrow">Where to stay</div>
+  <h2>住宿 · 已訂</h2>
+  <div class="body">
+    <div class="col">
+      <div class="card"><h3>🏨 The Thousand Kyoto <span class="pill">10/20–10/23 · 3 晚</span></h3>
+        <ul><li>京都站走 2–4 分，10/20 深夜抵達最輕鬆</li><li>嵐山、稲荷、宇治、大阪的 JR 都方便</li><li>10/23 退房後行李寄放，不用置物櫃</li><li class="hot">東山不在鐵路上，10/22 要搭公車或計程車</li></ul></div>
+    </div>
+    <div class="col">
+      <div class="card"><h3>🏨 安嵐 ANRAN <span class="pill">10/23–10/25 · 2 晚</span></h3>
+        <ul><li>大阪市西成区太子 1-5-4 · +81 6-6643-9903</li><li>新今宮走 8–10 分，南海直達關西機場</li><li>地鐵動物園前 3–5 分</li></ul></div>
+      <div class="card warn"><h3>要知道的事</h3><ul><li>這區街景比難波梅田粗一些，晚上走大路，不鑽小巷</li><li>從道頓堀回來叫計程車，約 ¥1,000</li><li><b>自助入住：</b>密碼、地址、聯絡方式先截圖</li><li>確認 check-in 時間（約 16:30 到）和三人床型</li></ul></div>
+    </div>
+  </div>
+  <div class="foot"><span>京都 · 大阪 行前說明</span><span>12 / 15</span></div>
+</section>
+
+<!-- 12 To-do -->
+<section class="slide">
+  <div class="eyebrow">To do</div>
+  <h2>出發前要訂、要查</h2>
+  <div class="body">
+    <div class="col">
+      <div class="card urgent"><h3>🔴 要訂位／訂票</h3><ul>
+        <li class="cb">JR HARUKA 指定席（10/20 18:30 前後）</li>
+        <li class="cb">10/22 午餐：奧丹南禪寺 或 京うな和</li>
+        <li class="cb">10/22 晚餐：oden klep（先查地址）</li>
+        <li class="cb">10/21 午餐：嵐山庭院</li>
+        <li class="cb">大力邸 / 嵯峨野小火車（想去的話）</li>
+        <li class="cb">10/24 晚餐：香川關東煮（查店名）</li>
+      </ul></div>
+    </div>
+    <div class="col">
+      <div class="card ok"><h3>✅ 已完成</h3><ul>
+        <li class="cb done">機票（去程、回程）</li>
+        <li class="cb done">京都、大阪住宿</li>
+        <li class="cb done">無鄰菴 10/22 15:00</li>
+      </ul></div>
+      <div class="card warn"><h3>🟠 順便確認</h3><ul>
+        <li class="cb">無鄰菴抹茶是否另外預約</li>
+        <li class="cb">想去的店的定休日（10/20、10/21 高風險）</li>
+        <li class="cb">Anran 入住方式與三人床型</li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="foot"><span>京都 · 大阪 行前說明</span><span>13 / 15</span></div>
+</section>
+
+<!-- companions -->
+<section class="slide">
+  <div class="eyebrow">For the group</div>
+  <h2>給同行的人：要帶什麼、天氣怎麼穿</h2>
+  <div class="body">
+    <div class="col">
+      <div class="card info"><h3>🌤️ 天氣（季節常態，非預報）</h3><ul>
+        <li>白天 <b>21–23°C</b>，早晚 <b>12–14°C</b>，溫差約 10 度</li>
+        <li>日落約 <b>17:10</b>，傍晚很快變涼變暗</li>
+        <li>洋蔥式：短袖／薄長袖 + 薄外套或針織</li>
+        <li>出發前一天再看一次京都、大阪預報，下雨的話 10/22 東山改搭計程車</li>
+      </ul></div>
+      <div class="card"><h3>👟 走路很多</h3><ul>
+        <li>一天輕鬆破 15,000 步，帶<b>好走的鞋</b></li>
+        <li>無鄰菴、寺院要脫鞋：穿<b>好穿脫的鞋</b>，帶一雙乾淨的襪子</li>
+        <li>折傘、行動電源</li>
+      </ul></div>
+    </div>
+    <div class="col">
+      <div class="card warn"><h3>⏰ 要早起的日子</h3><ul>
+        <li>10/21 <b>07:40</b> 出發去嵐山（竹林 8:30 前）</li>
+        <li>10/22 <b>08:30 前</b>從京都站搭公車去銀閣寺</li>
+        <li>10/23 <b>07:45</b> 退房，千本鳥居 8:30 前</li>
+        <li>10/25 <b>08:35</b> 離開飯店</li>
+      </ul></div>
+      <div class="card"><h3>🎒 每人自己帶</h3><ul>
+        <li>護照（退稅要用，同店同日滿 ¥5,000）</li>
+        <li>Suica 或 IC 卡、一些日幣現金</li>
+        <li>購物袋 ×2、常備藥、OK 繃</li>
+        <li>行李留 30% 空間裝戰利品</li>
+        <li>安嵐自助入住：<b>每個人都截圖</b>門鎖密碼與地址</li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="foot"><span>京都 · 大阪 行前說明</span><span>14 / 15</span></div>
+</section>
+
+<!-- 13 Packing -->
+<section class="slide">
+  <div class="eyebrow">Before you go</div>
+  <h2>證件、網路與行李</h2>
+  <div class="body">
+    <div class="col">
+      <div class="card"><h3>🛂 證件與網路</h3><ul>
+        <li class="cb">護照效期 6 個月以上</li>
+        <li class="cb">填 Visit Japan Web（入境／海關 QR）</li>
+        <li class="cb">iPhone 錢包加 Suica</li>
+        <li class="cb">eSIM 或 WiFi 分享器</li>
+        <li class="cb">換日幣現金；信用卡開通海外交易</li>
+        <li class="cb">海外旅平險；下載關西離線地圖</li>
+      </ul></div>
+    </div>
+    <div class="col">
+      <div class="card"><h3>🧳 行李</h3><ul>
+        <li>白天 21–23°C，早晚 12–14°C → 洋蔥式穿搭</li>
+        <li>好走的鞋（一天輕鬆破 15,000 步）</li>
+        <li>折傘、行動電源、常備藥</li>
+        <li>環保購物袋 ×2</li>
+        <li>留 30% 空間給戰利品，或帶可折疊空袋</li>
+      </ul></div>
+      <div class="card info" style="text-align:center"><p style="font-size:40px">🍁 良い旅を</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>營業時間、票價、班次皆為概估，出發前請以官網與地圖為準</span><span>15 / 15</span></div>
+</section>
+
+</div>
+<div class="nav"><button onclick="show(i-1)" aria-label="上一頁">‹</button><span id="pg"></span><button onclick="show(i+1)" aria-label="下一頁">›</button></div>
+<div id="hint">← → 或下方按鈕換頁 · 可選取複製文字 · F 全螢幕</div>
+<script>
+const slides=[...document.querySelectorAll('.slide')],stage=document.getElementById('stage');
+let i=Math.max(0,Math.min(slides.length-1,(parseInt(location.hash.slice(1))||1)-1));
+function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('on',k===i));history.replaceState(null,'','#'+(i+1));document.getElementById('pg').textContent=(i+1)+' / '+slides.length}
+function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform='translate(-50%,-50%) scale('+s+')'}
+addEventListener('resize',fit);fit();show(i);
+addEventListener('keydown',e=>{
+  if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1)}
+  else if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();show(i-1)}
+  else if(e.key==='Home')show(0);else if(e.key==='End')show(slides.length-1);
+  else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}
+});
+</script>
+</body>
+</html>
